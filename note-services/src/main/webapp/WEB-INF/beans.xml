@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jaxrs="http://cxf.apache.org/jaxrs"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation=" 
+	http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans.xsd 
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd 
+	http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
+	http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+	http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+	">
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<context:property-placeholder location="file:///opt/local/adept/app/settings.properties" />
+	<context:component-scan base-package="edu.harvard.hms.dbmi.avillach.cliniscope" />
+	<context:annotation-config />
+
+	<bean
+		class="org.springframework.beans.factory.config.PreferencesPlaceholderConfigurer" />
+
+	<!--bean id="cliniscopeDS" class="org.apache.commons.dbcp2.BasicDataSource"
+		destroy-method="close">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql://cliniscope-db:3306/adept" />
+		<property name="username" value="root" />
+		<property name="password" value="new-password" />
+	</bean-->
+	
+	<bean id="cliniscopeDS"
+		class="org.apache.commons.dbcp2.BasicDataSource">
+
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+	</bean>
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean>
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="cliniscopeDS" />
+		<property name="packagesToScan"
+			value="edu.harvard.hms.dbmi.avillach.cliniscope.entities" />
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<property name="showSql" value="false" />
+				<property name="databasePlatform" value="org.hibernate.dialect.MySQLDialect" />
+			</bean>
+		</property>
+	</bean>
+
+	<util:list id="serviceList">
+		<ref bean="adjudicationService" />
+		<ref bean="authCodeService" />
+		<ref bean="cuiService" />
+		<ref bean="clinicalNoteService" />
+		<ref bean="patientHistoryService" />
+		<ref bean="validationService" />
+		<ref bean="userManagementService" />
+	</util:list>
+
+	<jaxrs:server id="services" address="/" >
+		<jaxrs:serviceBeans>
+			<ref bean="adjudicationService" />
+			<ref bean="authCodeService" />
+			<ref bean="cuiService" />
+			<ref bean="clinicalNoteService" />
+			<ref bean="patientHistoryService" />
+			<ref bean="validationService" />
+			<ref bean="userManagementService" />
+		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
+			<bean class="edu.harvard.hms.dbmi.avillach.cliniscope.security.CliniscopeAuthFilter"/>
+			<bean class="edu.harvard.hms.dbmi.avillach.cliniscope.security.AccessDeniedExceptionMapper"/>
+			<bean class="edu.harvard.hms.dbmi.avillach.cliniscope.security.ExpiredJwtExceptionMapper"/>
+		</jaxrs:providers>
+		<jaxrs:inInterceptors>
+			<ref bean="authorizationInterceptor" />
+		</jaxrs:inInterceptors>
+
+		<jaxrs:outInterceptors>
+			<bean class="org.apache.cxf.transport.common.gzip.GZIPOutInterceptor" />
+		</jaxrs:outInterceptors>
+	</jaxrs:server>
+
+	<bean id="authorizationInterceptor"
+		class="edu.harvard.hms.dbmi.avillach.cliniscope.security.BeanListSecureAnnotationsInterceptor">
+		<property name="securedBeans" ref="serviceList" />
+	</bean>
+
+	<util:map id="rolesMap">
+		<entry key="testSecure" value="ROLE_ADMIN" />
+	</util:map>
+
+</beans>

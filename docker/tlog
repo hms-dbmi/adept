@@ -1,0 +1,217 @@
+Attaching to docker_tomcat_1
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:12 AM org.apache.catalina.startup.VersionLoggerListener log
+[36mtomcat_1  |[0m INFO: Server version:        Apache Tomcat/7.0.81
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:12 AM org.apache.catalina.startup.VersionLoggerListener log
+[36mtomcat_1  |[0m INFO: Server built:          Aug 11 2017 10:21:27 UTC
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:12 AM org.apache.catalina.startup.VersionLoggerListener log
+[36mtomcat_1  |[0m INFO: Server number:         7.0.81.0
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:12 AM org.apache.catalina.startup.VersionLoggerListener log
+[36mtomcat_1  |[0m INFO: OS Name:               Linux
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:12 AM org.apache.catalina.startup.VersionLoggerListener log
+[36mtomcat_1  |[0m INFO: OS Version:            4.4.86-boot2docker
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:12 AM org.apache.catalina.startup.VersionLoggerListener log
+[36mtomcat_1  |[0m INFO: Architecture:          amd64
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:12 AM org.apache.catalina.startup.VersionLoggerListener log
+[36mtomcat_1  |[0m INFO: Java Home:             /usr/lib/jvm/java-8-openjdk-amd64/jre
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:12 AM org.apache.catalina.startup.VersionLoggerListener log
+[36mtomcat_1  |[0m INFO: JVM Version:           1.8.0_141-8u141-b15-1~deb9u1-b15
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:12 AM org.apache.catalina.startup.VersionLoggerListener log
+[36mtomcat_1  |[0m INFO: JVM Vendor:            Oracle Corporation
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:12 AM org.apache.catalina.startup.VersionLoggerListener log
+[36mtomcat_1  |[0m INFO: CATALINA_BASE:         /usr/local/tomcat
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:12 AM org.apache.catalina.startup.VersionLoggerListener log
+[36mtomcat_1  |[0m INFO: CATALINA_HOME:         /usr/local/tomcat
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:12 AM org.apache.catalina.startup.VersionLoggerListener log
+[36mtomcat_1  |[0m INFO: Command line argument: -Djava.util.logging.config.file=/usr/local/tomcat/conf/logging.properties
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:12 AM org.apache.catalina.startup.VersionLoggerListener log
+[36mtomcat_1  |[0m INFO: Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:12 AM org.apache.catalina.startup.VersionLoggerListener log
+[36mtomcat_1  |[0m INFO: Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:12 AM org.apache.catalina.startup.VersionLoggerListener log
+[36mtomcat_1  |[0m INFO: Command line argument: -Djava.endorsed.dirs=/usr/local/tomcat/endorsed
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:12 AM org.apache.catalina.startup.VersionLoggerListener log
+[36mtomcat_1  |[0m INFO: Command line argument: -Dcatalina.base=/usr/local/tomcat
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:12 AM org.apache.catalina.startup.VersionLoggerListener log
+[36mtomcat_1  |[0m INFO: Command line argument: -Dcatalina.home=/usr/local/tomcat
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:12 AM org.apache.catalina.startup.VersionLoggerListener log
+[36mtomcat_1  |[0m INFO: Command line argument: -Djava.io.tmpdir=/usr/local/tomcat/temp
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:12 AM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+[36mtomcat_1  |[0m INFO: Loaded APR based Apache Tomcat Native library 1.2.12 using APR version 1.5.2.
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:12 AM org.apache.catalina.core.AprLifecycleListener lifecycleEvent
+[36mtomcat_1  |[0m INFO: APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:12 AM org.apache.catalina.core.AprLifecycleListener initializeSSL
+[36mtomcat_1  |[0m INFO: OpenSSL successfully initialized (OpenSSL 1.1.0f  25 May 2017)
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:13 AM org.apache.coyote.AbstractProtocol init
+[36mtomcat_1  |[0m INFO: Initializing ProtocolHandler ["http-apr-8080"]
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:13 AM org.apache.coyote.AbstractProtocol init
+[36mtomcat_1  |[0m INFO: Initializing ProtocolHandler ["ajp-apr-8009"]
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:13 AM org.apache.catalina.startup.Catalina load
+[36mtomcat_1  |[0m INFO: Initialization processed in 1424 ms
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:13 AM org.apache.catalina.core.StandardService startInternal
+[36mtomcat_1  |[0m INFO: Starting service Catalina
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:13 AM org.apache.catalina.core.StandardEngine startInternal
+[36mtomcat_1  |[0m INFO: Starting Servlet Engine: Apache Tomcat/7.0.81
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:13 AM org.apache.catalina.startup.HostConfig deployWAR
+[36mtomcat_1  |[0m INFO: Deploying web application archive /usr/local/tomcat/webapps/ROOT.war
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:21 AM org.apache.catalina.loader.WebappClassLoaderBase validateJarFile
+[36mtomcat_1  |[0m INFO: validateJarFile(/usr/local/tomcat/webapps/ROOT/WEB-INF/lib/javax.servlet-api-3.1.0.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:21 AM org.apache.catalina.loader.WebappClassLoaderBase validateJarFile
+[36mtomcat_1  |[0m INFO: validateJarFile(/usr/local/tomcat/webapps/ROOT/WEB-INF/lib/tomcat-el-api-8.5.16.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/el/Expression.class
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:21 AM org.apache.catalina.loader.WebappClassLoaderBase validateJarFile
+[36mtomcat_1  |[0m INFO: validateJarFile(/usr/local/tomcat/webapps/ROOT/WEB-INF/lib/tomcat-servlet-api-8.5.16.jar) - jar not loaded. See Servlet Spec 3.0, section 10.7.2. Offending class: javax/servlet/Servlet.class
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:25 AM org.apache.catalina.startup.TldConfig execute
+[36mtomcat_1  |[0m INFO: At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[36mtomcat_1  |[0m 2018-04-05 11:08:26 INFO  ContextLoader:304 - Root WebApplicationContext: initialization started
+[36mtomcat_1  |[0m 2018-04-05 11:08:26 INFO  XmlWebApplicationContext:583 - Refreshing Root WebApplicationContext: startup date [Thu Apr 05 11:08:26 UTC 2018]; root of context hierarchy
+[36mtomcat_1  |[0m 2018-04-05 11:08:26 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from ServletContext resource [/WEB-INF/beans.xml]
+[36mtomcat_1  |[0m 2018-04-05 11:08:26 INFO  XmlBeanDefinitionReader:317 - Loading XML bean definitions from class path resource [META-INF/cxf/cxf.xml]
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:27 AM java.util.prefs.FileSystemPreferences$1 run
+[36mtomcat_1  |[0m INFO: Created user preferences directory.
+[36mtomcat_1  |[0m 2018-04-05 11:08:27 INFO  LocalContainerEntityManagerFactoryBean:349 - Building JPA container EntityManagerFactory for persistence unit 'default'
+[36mtomcat_1  |[0m 2018-04-05 11:08:27 INFO  LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [
+[36mtomcat_1  |[0m 	name: default
+[36mtomcat_1  |[0m 	...]
+[36mtomcat_1  |[0m 2018-04-05 11:08:28 INFO  Version:45 - HHH000412: Hibernate Core {5.2.9.Final}
+[36mtomcat_1  |[0m 2018-04-05 11:08:28 INFO  Environment:213 - HHH000206: hibernate.properties not found
+[36mtomcat_1  |[0m 2018-04-05 11:08:28 INFO  Version:66 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+[36mtomcat_1  |[0m Thu Apr 05 11:08:28 UTC 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+[36mtomcat_1  |[0m Thu Apr 05 11:08:29 UTC 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+[36mtomcat_1  |[0m 2018-04-05 11:08:29 INFO  Dialect:157 - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[36mtomcat_1  |[0m 2018-04-05 11:08:31 INFO  LocalContainerEntityManagerFactoryBean:379 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+[36mtomcat_1  |[0m 2018-04-05 11:08:31 ERROR ClinicalNoteDecryptionFilter:18 - ****CREATED DECRYPTION FILTER****
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:32 AM org.apache.cxf.endpoint.ServerImpl initDestination
+[36mtomcat_1  |[0m INFO: Setting the server's publish address to be /
+[36mtomcat_1  |[0m 2018-04-05 11:08:32 INFO  ContextLoader:344 - Root WebApplicationContext: initialization completed in 6698 ms
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:32 AM org.apache.catalina.startup.HostConfig deployWAR
+[36mtomcat_1  |[0m INFO: Deployment of web application archive /usr/local/tomcat/webapps/ROOT.war has finished in 19,683 ms
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:32 AM org.apache.coyote.AbstractProtocol start
+[36mtomcat_1  |[0m INFO: Starting ProtocolHandler ["http-apr-8080"]
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:32 AM org.apache.coyote.AbstractProtocol start
+[36mtomcat_1  |[0m INFO: Starting ProtocolHandler ["ajp-apr-8009"]
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:33 AM org.apache.catalina.startup.Catalina start
+[36mtomcat_1  |[0m INFO: Server startup in 19868 ms
+[36mtomcat_1  |[0m Thu Apr 05 11:08:46 UTC 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+[36mtomcat_1  |[0m Thu Apr 05 11:08:46 UTC 2018 WARN: Establishing SSL connection without server's identity verification is not recommended. According to MySQL 5.5.45+, 5.6.26+ and 5.7.6+ requirements SSL connection must be established by default if explicit option isn't set. For compliance with existing applications not using SSL the verifyServerCertificate property is set to 'false'. You need either to explicitly disable SSL by setting useSSL=false, or set useSSL=true and provide truststore for server certificate verification.
+[36mtomcat_1  |[0m 2018-04-05 11:08:46 INFO  QueryTranslatorFactoryInitiator:47 - HHH000397: Using ASTQueryTranslatorFactory
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:47 AM org.apache.cxf.phase.PhaseInterceptorChain doDefaultLogging
+[36mtomcat_1  |[0m WARNING: Interceptor for {http://cliniscope.avillach.dbmi.hms.harvard.edu/}AdjudicationService has thrown exception, unwinding now
+[36mtomcat_1  |[0m org.apache.cxf.interceptor.security.AccessDeniedException: Unauthorized
+[36mtomcat_1  |[0m 	at org.apache.cxf.interceptor.security.AbstractAuthorizingInInterceptor.handleMessage(AbstractAuthorizingInInterceptor.java:60)
+[36mtomcat_1  |[0m 	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:262)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:234)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:208)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:160)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.servlet.CXFNonSpringServlet.invoke(CXFNonSpringServlet.java:180)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:299)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doGet(AbstractHTTPServlet.java:223)
+[36mtomcat_1  |[0m 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:274)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+[36mtomcat_1  |[0m 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+[36mtomcat_1  |[0m 	at org.apache.catalina.filters.CorsFilter.handleNonCORS(CorsFilter.java:440)
+[36mtomcat_1  |[0m 	at org.apache.catalina.filters.CorsFilter.doFilter(CorsFilter.java:177)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+[36mtomcat_1  |[0m 	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:506)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+[36mtomcat_1  |[0m 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+[36mtomcat_1  |[0m 	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:962)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+[36mtomcat_1  |[0m 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+[36mtomcat_1  |[0m 	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1115)
+[36mtomcat_1  |[0m 	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+[36mtomcat_1  |[0m 	at org.apache.tomcat.util.net.AprEndpoint$SocketWithOptionsProcessor.run(AprEndpoint.java:2486)
+[36mtomcat_1  |[0m 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+[36mtomcat_1  |[0m 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+[36mtomcat_1  |[0m 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+[36mtomcat_1  |[0m 	at java.lang.Thread.run(Thread.java:748)
+[36mtomcat_1  |[0m 
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:47 AM org.apache.cxf.phase.PhaseInterceptorChain doDefaultLogging
+[36mtomcat_1  |[0m WARNING: Interceptor for {http://cliniscope.avillach.dbmi.hms.harvard.edu/}AdjudicationService has thrown exception, unwinding now
+[36mtomcat_1  |[0m org.apache.cxf.interceptor.security.AccessDeniedException: Unauthorized
+[36mtomcat_1  |[0m 	at org.apache.cxf.interceptor.security.AbstractAuthorizingInInterceptor.handleMessage(AbstractAuthorizingInInterceptor.java:60)
+[36mtomcat_1  |[0m 	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:262)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:234)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:208)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:160)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.servlet.CXFNonSpringServlet.invoke(CXFNonSpringServlet.java:180)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:299)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doGet(AbstractHTTPServlet.java:223)
+[36mtomcat_1  |[0m 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:274)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+[36mtomcat_1  |[0m 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+[36mtomcat_1  |[0m 	at org.apache.catalina.filters.CorsFilter.handleNonCORS(CorsFilter.java:440)
+[36mtomcat_1  |[0m 	at org.apache.catalina.filters.CorsFilter.doFilter(CorsFilter.java:177)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+[36mtomcat_1  |[0m 	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:506)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+[36mtomcat_1  |[0m 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+[36mtomcat_1  |[0m 	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:962)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+[36mtomcat_1  |[0m 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+[36mtomcat_1  |[0m 	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1115)
+[36mtomcat_1  |[0m 	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+[36mtomcat_1  |[0m 	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.doRun(AprEndpoint.java:2549)
+[36mtomcat_1  |[0m 	at org.apache.tomcat.util.net.AprEndpoint$SocketProcessor.run(AprEndpoint.java:2538)
+[36mtomcat_1  |[0m 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+[36mtomcat_1  |[0m 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+[36mtomcat_1  |[0m 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+[36mtomcat_1  |[0m 	at java.lang.Thread.run(Thread.java:748)
+[36mtomcat_1  |[0m 
+[36mtomcat_1  |[0m Apr 05, 2018 11:08:47 AM org.apache.cxf.phase.PhaseInterceptorChain doDefaultLogging
+[36mtomcat_1  |[0m WARNING: Interceptor for {http://cliniscope.avillach.dbmi.hms.harvard.edu/}AdjudicationService has thrown exception, unwinding now
+[36mtomcat_1  |[0m org.apache.cxf.interceptor.security.AccessDeniedException: Unauthorized
+[36mtomcat_1  |[0m 	at org.apache.cxf.interceptor.security.AbstractAuthorizingInInterceptor.handleMessage(AbstractAuthorizingInInterceptor.java:60)
+[36mtomcat_1  |[0m 	at org.apache.cxf.phase.PhaseInterceptorChain.doIntercept(PhaseInterceptorChain.java:308)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.ChainInitiationObserver.onMessage(ChainInitiationObserver.java:121)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.http.AbstractHTTPDestination.invoke(AbstractHTTPDestination.java:262)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.servlet.ServletController.invokeDestination(ServletController.java:234)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:208)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.servlet.ServletController.invoke(ServletController.java:160)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.servlet.CXFNonSpringServlet.invoke(CXFNonSpringServlet.java:180)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.handleRequest(AbstractHTTPServlet.java:299)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.doGet(AbstractHTTPServlet.java:223)
+[36mtomcat_1  |[0m 	at javax.servlet.http.HttpServlet.service(HttpServlet.java:624)
+[36mtomcat_1  |[0m 	at org.apache.cxf.transport.servlet.AbstractHTTPServlet.service(AbstractHTTPServlet.java:274)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+[36mtomcat_1  |[0m 	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+[36mtomcat_1  |[0m 	at org.apache.catalina.filters.CorsFilter.handleNonCORS(CorsFilter.java:440)
+[36mtomcat_1  |[0m 	at org.apache.catalina.filters.CorsFilter.doFilter(CorsFilter.java:177)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:219)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:110)
+[36mtomcat_1  |[0m 	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:506)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:169)
+[36mtomcat_1  |[0m 	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+[36mtomcat_1  |[0m 	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:962)
+[36mtomcat_1  |[0m 	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+[36mtomcat_1  |[0m 	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:445)
+[36mtomcat_1  |[0m 	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1115)
+[36mtomcat_1  |[0m 	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:637)
+[36mtomcat_1  |[0m 	at org.apache.tomcat.util.net.AprEndpoint$SocketWithOptionsProcessor.run(AprEndpoint.java:2486)
+[36mtomcat_1  |[0m 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+[36mtomcat_1  |[0m 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+[36mtomcat_1  |[0m 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+[36mtomcat_1  |[0m 	at java.lang.Thread.run(Thread.java:748)
+[36mtomcat_1  |[0m 
+[36mtomcat_1  |[0m 2018-04-05 11:54:15 ERROR AuthCodeService:78 - http://192.168.99.100:8080/login.html

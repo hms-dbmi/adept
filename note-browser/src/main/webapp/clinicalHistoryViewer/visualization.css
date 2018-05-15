@@ -1,0 +1,188 @@
+.yellow-background {
+	background-color : #e9edb4 !important;
+}
+.gray-background {
+	background-color : #b6b6b6 !important;
+}
+.pink-background {
+	background-color : #ffaaaa !important;
+}
+.vis-item.vis-background.subgroup {
+	z-index: 10;
+}
+
+.vis-item {
+	font-size: 12pt;
+	line-height: 2em;
+    background-color: rgba(255,255,255,.15);
+}
+span .vis-item-content {
+}
+.vis-item.vis-box {
+	border-style:none;
+}
+
+.vis-item .vis-item-content {
+	padding: 0px;
+}
+
+.vis-item.vis-background.history-bg {
+	background-color: rgba(0,0,1,.2);
+}
+
+.vis-labelset .vis-label .vis-inner {
+    padding: 0px 5px;
+}
+.vis-item.vis-selected {
+    border-color: #ffc200;
+    background-color: rgba(1,1,1,.2);
+    z-index: 2;
+}
+div.vis-tooltip {
+}
+
+.edema-bullet {
+	color: red;
+}
+
+.remodulin-bullet {
+	color: orange;
+}
+
+.diarrhea-bullet {
+	color: cyan;
+}
+
+.has-related-cuis {
+	background-color : rgba(222,111,0,.3);
+}
+
+.adverse-event-occurred input {
+	margin: 0 0 0 10;
+}
+
+.adverse-reaction-occurred input {
+	margin: 0 0 0 10;
+}
+
+.adverse-event-occurred {
+	margin: 5;
+}
+
+.adverse-reaction-occurred {
+	margin: 5;
+}
+
+.candidate-adverse-drug-reaction.btn {
+	width: 100%;
+}
+
+.legend-spacer {
+	line-height: 1pt;
+}
+
+#classification-controls {
+	position: fixed;
+	left: 71%;
+	top: 10%;
+	width: 28%;
+	height: 80%;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	border-color: #cccccc;
+	border-style: solid;
+	border-width: 10;
+	border-radius: 5px;
+}
+
+#classification-controls.affix-top {
+	top: 10%;
+}
+
+#classification-controls.affix-bottom {
+	position: absolute;
+}
+
+#bottom-controls {
+	font-size: 12pt;
+	line-height: 2em;
+	position: fixed;
+	background: #cccccc;
+	border-color: #cccccc;
+	border-style: solid;
+	border-width: 10;
+	border-radius: 5px;
+	left: 4%;
+	width: 67%;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	bottom: -60;
+}
+
+#bottom-controls-group {
+	position: relative;
+	white-space: nowrap;
+}
+
+.external-links {
+	
+}
+
+.glyphicon-thumbs-up {
+	color: green;
+}
+
+.glyphicon-thumbs-down {
+	color: red;
+}
+
+.up-triangle {
+	padding: 5px;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.down-triangle {
+	padding: 5px;
+	text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.panel-title {
+	display: inline-block;
+}
+
+.panel-title a {
+	text-align: center;
+}
+
+.panel-heading input {
+	position: relative;
+	margin: -5;
+	height: 3em;
+}
+
+.panel-body {
+	width: 100%;
+}
+
+.tooltip-inner {
+	max-width: max-content;
+	font-size:14px;
+	text-align:left;
+	display:block;
+}
+
+#accordion {
+	overflow: scroll;
+}
+.validation-controls {
+	width:100%;
+}
+.panel-heading {
+	width:100%;
+}
+.panel-title {
+	width:100%;
+}
+.accordion-entry-link {
+	width:100%;
+}

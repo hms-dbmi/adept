@@ -1,0 +1,19 @@
+<ul>
+{{#each this}}
+<div class='row'>
+	<div class='container well patient-info-block' id='patientInfo-{{patientId}}'>
+		<div class='patient-info row'>
+			<span>Patient: {{patientId}}<span>
+		</div>
+		<div class='patient-term-validations container'>
+			{{#each candidateRelations}}
+				<div class='row'>
+					<a class='btn btn-default btn-candidate drug-{{drugCui}} event-{{eventCui}}' data-adjudicated="{{adjudicated}}" data-candidate-id="{{id}}" data-drug-cui="{{drugCui}}" data-event-cui="{{eventCui}}" data-target-url='/patientHistory/{{patientId}}?candidate={{id}}'>{{drug}} - {{event}}</a>
+					<span class="candidate-validation-indicator drug-{{drugCui}} event-{{eventCui}} glyphicon {{#if adjudicated}} glyphicon-green-dot {{else}} {{#if validated}} glyphicon-yellow-dot {{else}} glyphicon-red-dot {{/if}}{{/if}}" data-adjudicated="{{adjudicated}}" data-candidate-id="{{id}}" data-drug-cui="{{drugCui}}"  data-event-cui="{{eventCui}}"></span>
+				</div>		
+			{{/each}}
+		</div>
+	</div>
+</div>
+{{/each}}
+</ul>

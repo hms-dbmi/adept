@@ -1,0 +1,64 @@
+	{{#each entries}}
+	<div class="panel panel-default">
+		<div class="panel-heading {{priorityClass}}">
+			<h4 class="panel-title">
+				<div class="container col-md-12">
+					<div class="row">
+						<a data-toggle="collapse" id="accordion-{{candidateId}}"
+							data-parent="#accordion" href="#collapse{{candidateId}}"> <span
+							class='up-triangle {{drugCui}}-arrow col-md-1'>&#9650;</span> <span class='col-md-10'>{{drug}} -
+							{{event}}</span> <span class='down-triangle {{eventCui}}-arrow col-md-1'>&#9660;</span>
+						</a>
+					</div>
+						<br>
+					<div class="row">
+						<input type='checkbox' class='candidate-checkbox col-md-1' id='{{candidateId}}' data-drug-cui='{{drugCui}}' data-symptom-cui='{{eventCui}}' data-drug='{{drug}}' data-symptom='{{event}}'
+							style='top: -10px'></input>
+						<div class="col-md-8">
+							{{#each validations}}
+								{{userId}}
+								<span class="glyphicon glyphicon-thumbs-{{validationIndicatorA}}"></span>
+								<span class="glyphicon glyphicon-thumbs-{{validationIndicatorB}}"></span>	
+								<br>						
+							{{/each}}
+						</div>
+						<span class="external-links col-md-2"> <a target="blank"
+							href="https://www.ncbi.nlm.nih.gov/pubmed?term=({{drug}})%20AND%20({{event}})&cmd=correctspelling"><img
+								src="/pubmed.png"></img></a>
+								
+						</span>
+					</div>
+				</div>
+				
+			</h4>
+		</div>
+				
+		
+		<div id="collapse{{candidateId}}" class="panel-collapse collapse">
+			<div class="panel-body container">
+				<div class="row">
+					<span class="col-md-12">Is there a relation between {{drug}} and {{event}} for this patient <strong>across the clinical history</strong>?</span>
+				</div>
+				<div class="row container well" style="padding: 5">
+					<div class="radio col-md-12">
+						<label class='radio-inline'><input type="radio"
+							name="optradio-{{candidateId}}" value=1>Yes, There is a potential
+							relationship</input></label>
+					</div>
+					<div class="radio col-md-12">
+						<label class='radio-inline'><input type="radio"
+							name="optradio-{{candidateId}}" value=-1>No, This is an error.</input></label>
+					</div>
+					<div class="radio col-md-12">
+						<label class='radio-inline'><input type="radio"
+							name="optradio-{{candidateId}}" value=0>I cannot tell based on the
+							displayed information.</input></label>
+					</div>
+				</div>
+				<div class="row">
+					<a data-candidate-id="{{candidateId}}" class="history-{{../userMode}}-confirm btn btn-default">{{../confirmText}}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	{{/each}}

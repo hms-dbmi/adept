@@ -1,0 +1,64 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>edu.harvard.hms.dbmi.avillach.cliniscope</groupId>
+		<artifactId>cliniscope</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>note-browser</artifactId>
+	<packaging>war</packaging>
+	<name>clinical-note-browser UI</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>edu.harvard.hms.dbmi.avillach.cliniscope</groupId>
+			<artifactId>js-libs</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-catalina</artifactId>
+			<version>8.5.16</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<finalName>clinical-note-browser</finalName>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.tomcat.maven</groupId>
+					<artifactId>tomcat7-maven-plugin</artifactId>
+					<version>2.0</version>
+					<executions>
+						<execution>
+							<id>default-cli</id>
+							<goals>
+								<goal>run</goal>
+							</goals>
+							<configuration>
+								<port>13001</port>
+								<path>/jaxrs-service</path>
+								<useSeparateTomcatClassLoader>true</useSeparateTomcatClassLoader>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-eclipse-plugin</artifactId>
+					<configuration>
+						<projectNameTemplate>[artifactId]-[version]</projectNameTemplate>
+						<wtpmanifest>true</wtpmanifest>
+						<wtpapplicationxml>true</wtpapplicationxml>
+						<wtpversion>2.0</wtpversion>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>

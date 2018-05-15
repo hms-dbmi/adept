@@ -1,0 +1,11 @@
+{{#each terms}}
+	<div class="row">
+	<input 
+		type='checkbox' 
+		id='{{cui}}' 
+		data-cui-type='{{type}}' 
+		data-cui-term='{{term}}' 
+		class='cui-selection-checkbox'
+	>{{term}}</input>
+	</div>
+{{/each}}

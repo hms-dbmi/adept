@@ -1,0 +1,16 @@
+# Eclipse
+.classpath
+.project
+.settings/
+.metadata/
+
+# Mac
+.DS_Store
+
+# Maven
+log/
+target/
+
+# App Specific
+encryption_key
+*.war

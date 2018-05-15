@@ -1,0 +1,64 @@
+<div class="container well">
+<div class="row">
+	<span class="username col-md-4">Username</span>
+	<span class="validate col-md-2 text-center">Can Validate</span>
+	<span class="adjudicate col-md-2 text-center">Can Adjudicate</span>
+	<span class="admin col-md-2" text-center>Is Admin</span>
+</div>
+<hr>
+	<div class="row form-group">
+		<div class="col-md-4">
+			<input id="add-user-email" type="text" name="email" class="username input-md form-control" placeholder="New User Email"></input>
+		</div>
+		<span class="validate col-md-2">
+			<div class="checkbox text-center">
+				<input id="add-user-canValidate" type="checkbox">
+			</div>
+		</span>
+		<span class="adjudicate col-md-2">
+			<div class="checkbox text-center">
+				<input id="add-user-canAdjudicate" type="checkbox">
+			</div>
+		</span>
+		<span class="admin col-md-2">
+			<div class="checkbox text-center">
+				<input id="add-user-isAdmin" type="checkbox">
+			</div>
+		</span>
+		<a class="btn btn-default" id="add-user-btn">Add User</a>
+	</div>
+
+{{#each users}}
+	<div class="row">
+		<span class="username col-md-4">{{authenticationName}}</span>
+		<span class="validate col-md-2">
+			<div class="checkbox text-center">
+				<input type="checkbox" class="permissionCheckbox" data-permission-name="canValidate" data-user-id="{{userId}}"
+				{{#if canValidate}}
+					checked = true
+				{{/if}}
+				>
+			</div>
+		</span>
+		<span class="adjudicate col-md-2">
+			<div class="checkbox text-center">
+				<input type="checkbox" class="permissionCheckbox" data-permission-name="canAdjudicate" data-user-id="{{userId}}"
+				{{#if canAdjudicate}}
+					checked = true
+				{{/if}}
+				>
+			</div>
+		</span>
+		<span class="admin col-md-2">
+			<div class="checkbox text-center">
+				<input type="checkbox" class="permissionCheckbox" data-permission-name="isAdmin" data-user-id="{{userId}}"
+				{{#if isAdmin}}
+					checked = true
+				{{/if}}
+				>
+			</div>
+		</span>
+	</div>
+	<hr>
+{{/each}}
+</div>

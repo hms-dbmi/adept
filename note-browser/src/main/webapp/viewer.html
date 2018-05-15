@@ -1,0 +1,121 @@
+<html>
+<head>
+	<link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css"
+		rel="stylesheet">
+	<link href="webjars/vis/4.19.1/dist/vis.min.css" rel="stylesheet">
+	<link href="clinicalHistoryViewer/visualization.css" rel="stylesheet">
+
+	<!-- This is a placeholder element for dynamically generated CUI styles. -->
+	<style id="cui-styles"></style>
+	<style id="cui-styles-timeline"></style>
+</head>
+<body>
+	<div id='header' class='container well'>
+		<h1>Patients</h1>
+	</div>
+
+	<script src="webjars/requirejs/2.3.2/require.min.js" data-main="clinicalHistoryViewer/visualization"></script>
+	<!--  BOOTSTRAP MODAL BOILERPLATE -->
+
+
+
+	<div class="modal fade" id="annotationModal" tabindex="-1"
+		role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				
+			</div>
+		</div>
+	</div>
+	<div id="modal-content-template" style="display:none;">
+		<div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Is there a
+				relation between {{drugName}} and {{symptomName}}?</h5>
+			<button type="button" class="close" data-dismiss="modal"
+				aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+
+		<div class="modal-body container">
+			<div class="row container"
+				style="padding: 5; left: 30px; position: relative;">
+				<div class="row radio">
+					<label><input type="radio" name="invalid-reason">Yes,
+						There is a potential relationship</label>
+				</div>
+				<div class="row radio">
+					<label><input type="radio" name="invalid-reason">No,
+						This is an error.</label>
+				</div>
+				<div class="row radio">
+					<label><input type="radio" name="invalid-reason">I
+						cannot tell based on the displayed information.</label>
+				</div>
+
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-secondary"
+				data-dismiss="modal">Cancel</button>
+			<button id="invalidate" type="button" class="btn btn-primary"
+				data-dismiss="modal">Confirm</button>
+		</div>
+	</div>
+	<!-- END BOOTSTRAP MODAL BOILERPLATE -->
+
+
+	<div id="classification-controls" data-spy="affix" class="container"
+		data-offset-top="10%" data-offset-bottom="10%">
+		<h5>Adverse Drug Reaction Candidates :</h5>
+		<div class="panel-group" id="accordion"></div>
+	</div>
+
+	<div id="note-viewer" style="margin: 0 30% 5% 5%;">
+		<!-- Back to patient list -->
+		<div id="text"
+			style="font-size: 12pt;"></div>
+
+		<canvas id="canvas"
+			style="border: 2px solid black; left: 0px; top: 30px; position: absolute;"></canvas>
+	</div>
+
+	<div id="bottom-buffer" style="height: 250px;"></div>
+	<div id="bottom-controls">
+		<span>Patient History Timeline : </span><span class="glyphicon glyphicon-question-sign triggers-tooltip" data-toggle="tooltip" title="This is a <br> message."></span><br> 
+		<div id="timeline"></div>
+		<script>
+
+		
+		</script>
+	</div>
+
+	<div id="cui-styles-template" style="display:none">
+			{{#each cuiColorsSolid}}
+			.{{cui}}-arrow {
+				color: {{color}};
+				background-image: radial-gradient(at center , {{gradientColor}} 0%, rgba(0,0,0,0) .5em);
+			}
+			{{/each}}
+			{{#each cuiColors}}
+			.{{cui}} {
+				border-color: {{color}};
+				border-style: solid;
+				border-width: 3px;
+			}
+			{{/each}}
+	</div>
+	<div id="cui-styles-timeline-template" style="display:none">
+			{{#each cuiColorsSolid}}
+			.{{cui}}-arrow-timeline {
+				color: {{color}};
+				background-image: radial-gradient(at center , {{gradientColor}} 0%, rgba(0,0,0,0) .5em);
+				z-index: 5000;
+			}
+			.{{cui}}-label-timeline {
+				
+			}
+			{{/each}}
+	</div>
+</body>
+</html>

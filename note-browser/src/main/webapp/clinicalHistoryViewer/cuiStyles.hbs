@@ -1,0 +1,13 @@
+{{#each cuiColorsSolid}}
+.{{cui}}-arrow {
+	color: {{color}};
+	background-image: radial-gradient(at center , {{gradientColor}} 0%, rgba(0,0,0,0) .5em);
+}
+{{/each}}
+{{#each cuiColors}}
+.{{cui}} {
+	border-color: {{color}};
+	border-style: solid;
+	border-width: 3px;
+}
+{{/each}}

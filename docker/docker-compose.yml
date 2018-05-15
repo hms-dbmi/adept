@@ -1,0 +1,40 @@
+version: '3'
+services:
+#  mysql:
+#    build:
+#      context: ./mysql
+#      dockerfile: Dockerfile
+#    container_name: cliniscope-db
+#    expose:
+#      - 3306
+#    ports:
+#      - 3306:3306
+#    environment:
+#      - MYSQL_ROOT_PASSWORD=new-password
+#      - MYSQL_DATABASE=adept
+  tomcat:
+    build:
+      context: ./tomcat
+      dockerfile: Dockerfile
+    expose:
+      - 8080
+      - 8000
+    ports:
+      - 8080:8080
+      - 8000:8000
+    volumes:
+      - /opt/local/adept/app:/opt/local/adept/app
+  httpd:
+    build:
+      context: ./httpd
+      dockerfile: Dockerfile
+    expose:
+      - 80
+      - 443
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /opt/local/adept/ssl:/opt/local/adept/ssl
+      - /opt/local/adept/logs:/usr/local/apache2/logs
+

@@ -1,0 +1,105 @@
+
+	<style id="cui-styles"></style>
+	<style id="cui-styles-timeline"></style>
+	<div class="modal fade" id="annotationModal" tabindex="-1"
+		role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				
+			</div>
+		</div>
+	</div>
+	<div id="modal-content-template" style="display:none;">
+		<div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Is there a
+				relation between {{drugName}} and {{symptomName}}?</h5>
+			<button type="button" class="close" data-dismiss="modal"
+				aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+
+		<div class="modal-body container">
+			<div class="row container"
+				style="padding: 5; left: 30px; position: relative;">
+				<div class="row radio">
+					<label><input type="radio" name="invalid-reason">Yes,
+						There is a potential relationship</label>
+				</div>
+				<div class="row radio">
+					<label><input type="radio" name="invalid-reason">No,
+						This is an error.</label>
+				</div>
+				<div class="row radio">
+					<label><input type="radio" name="invalid-reason">I
+						cannot tell based on the displayed information.</label>
+				</div>
+
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-secondary"
+				data-dismiss="modal">Cancel</button>
+			<button id="invalidate" type="button" class="btn btn-primary"
+				data-dismiss="modal">Confirm</button>
+		</div>
+	</div>
+	<!-- END BOOTSTRAP MODAL BOILERPLATE -->
+
+
+	<div id="classification-controls" data-spy="affix" class="container"
+		data-offset-top="10%" data-offset-bottom="10%">
+		<h5>Adverse Drug Reaction Candidates :
+		<span class="glyphicon glyphicon-question-sign triggers-tooltip" data-toggle="tooltip" data-placement="bottom"  data-container="body" data-html="true" 
+		title="
+		<p>Each of the panels below represents a candidate adverse drug reaction
+		which the cTAKES NLP system may have detected. By clicking on each Drug - 
+		Event pairing you will be presented with a question to verify or refute
+		the accuracy of this detection.<p>
+		<ul>
+		<li>ADR Candidates which you have already made a determination on have a grey background.</li>
+		<li>If you agreed with cTAKES that a potential adverse reaction occurred you will see two thumbs up.</li>
+		<li>If you disagreed with cTAKES that a potential adverse reaction occurred you will see two thumbs down.</li>
+		<li>If you did not believe enough information was present to make a determination you will see one thumb up and one thumb down.</li>
+		</ul>
+		">
+		</span></h5>
+		<div class="panel-group" id="accordion"></div>
+	</div>
+
+	<div id="note-viewer" style="margin: 0 30% 5% 5%;">
+		<!-- Back to patient list -->
+		<div id="text"
+			style="font-size: 12pt;"></div>
+
+		<canvas id="canvas"
+			style="border: 2px solid black; left: 0px; top: 30px; position: absolute;"></canvas>
+	</div>
+
+	<div id="bottom-buffer" style="height: 250px;"></div>
+	<div id="bottom-controls">
+		<span>Patient History Timeline : </span>
+		<span class="glyphicon glyphicon-question-sign triggers-tooltip" data-toggle="tooltip" data-placement="top"  data-container="body" data-html="true" 
+		title="
+		<p>The timeline shows 2 years of clinical history at a 
+		glance and serves as a control for navigating between 
+		notes.<p>
+		<ul>
+		<li>White vertical bars in the timeline represent individual notes.</li>
+		<li>Upward pointing triangles indicate that a note references the drug to the left of the triangle in the timeline legend.</li>
+		<li>Downward pointing triangles indicate that a note references the event to the left of the triangle in the timeline legend</li>
+		<li>The color of each triangle matches the color used to highlight the concept it references in the text.</li>
+		<li>Thin white vertical bars in the timeline are notes which do not reference a currently selected drug or event.</li>
+		<li>The timeline may be dragged left or right to see more of the patient history.</li>
+		<li>Hovering over a note in the timeline will give you the date of that note.</li>
+		<li>If notes are all bunched together, you can zoom in on them using the zoom control on your pointing device, typically <br>
+		the mousewheel or a system specific gesture on a trackpad.</li>
+		">
+		</span><br> 
+		<div id="timeline"></div>
+		<script>
+
+		
+		</script>
+	</div>
+

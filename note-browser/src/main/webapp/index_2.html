@@ -1,0 +1,65 @@
+<html>
+<body>
+	<link href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css"
+		rel="stylesheet">
+	<link href="webjars/vis/4.19.1/dist/vis.min.css" rel="stylesheet">
+	<link href="patientList/index.css" rel="stylesheet">
+	<script src="webjars/requirejs/2.3.2/require.min.js"
+		data-main="patientList/patientList"></script>
+	<style>
+.glyphicon-red-dot:before {
+	content: "\25cf";
+	font-size: 2em;
+	color: red;
+}
+
+.glyphicon-green-dot:before {
+	content: "\25cf";
+	font-size: 2em;
+	color: green;
+}
+</style>
+	<div id='header' class='container well'>
+		<h1>Patients</h1>
+	</div>
+
+	<div class='container'>
+		<div id="filters" class="row">
+			<div class="col-md-6">
+				<div class='col-md-11'>
+					<div class='row'>
+						<span class="well-label">Drug Filter</span> <a
+							class='clear-btn btn btn-danger btn-xs'>Clear</a>
+					</div>
+					<div class='row'>
+						<div id='drug-filter' class='filter well'></div>
+					</div>
+				</div>
+				<!-- div class=col-md-6>
+					<div class='row'>
+						<span class="well-label">Event Filter</span> <a
+							class='clear-btn btn btn-danger btn-xs'>Clear</a>
+					</div>
+					<div class="row">
+						<div id='event-filter' class='filter well'></div>
+					</div>
+				</div-->
+			</div>
+			<div class="col-md-6">
+				<div class="row">
+					<span class="well-label">Candidate AE (Patients)</span> 
+					<a class='clear-btn btn
+					btn-danger btn-xs'>Clear</a>
+				</div>
+				<div class="row">
+					<div id='candidate-filter' class='filter well'></div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div id='patientList' class='well col-md-12'></div>
+		</div>
+	</div>
+
+</body>
+</html>
