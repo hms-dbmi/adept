@@ -62,6 +62,7 @@
 		<ref bean="patientHistoryService" />
 		<ref bean="validationService" />
 		<ref bean="userManagementService" />
+		<ref bean="userInteractionService" />
 	</util:list>
 
 	<jaxrs:server id="services" address="/" >
