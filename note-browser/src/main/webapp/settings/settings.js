@@ -7,7 +7,17 @@ define(["text!settings/settings.hbs", "common/session", "jquery", "underscore", 
 		},
 		events: {
 			"click #add-user-btn" : "addUser",
-			"click input.permissionCheckbox" : "permissionsUpdated"
+			"click input.permissionCheckbox" : "permissionsUpdated",
+			"click .reset-rate-limit-btn" : "resetRateLimit"
+		},
+		resetRateLimit: function(event){
+			$.ajax({
+				type:'post',
+				url: "/rest/rateLimitReset/" + event.target.dataset.user,
+				success: function(data){
+					alert("The user's rate limit has been reset successfully.");
+				}
+			});
 		},
 		addUser: function(event){
 			var userModel = {
@@ -43,7 +53,7 @@ define(["text!settings/settings.hbs", "common/session", "jquery", "underscore", 
 		showSettings : function(){
 			$.get("/rest/user", function(data){
 				this.renderingContext = function(){
-					return { users: data };
+					return { users: _.filter(data, function(entry){return entry.authenticationName !== "System"}) };
 				};
 				this.render();
 			}.bind(this));
