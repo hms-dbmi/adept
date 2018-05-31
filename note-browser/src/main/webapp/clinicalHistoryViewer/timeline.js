@@ -86,6 +86,8 @@ define(['jquery', 'handlebars', 'underscore', 'vis', 'common/synonymMapper'],
 		};
 
 		createTimeline(loadDocument);
+		timeline.setSelection(noteToSelect);
+		loadDocument(noteToSelect);
 		
 		timeline.on("rangechanged", _.debounce(function(args){
 			var start = args.start;
@@ -95,8 +97,6 @@ define(['jquery', 'handlebars', 'underscore', 'vis', 'common/synonymMapper'],
 			}) : notes;
 
 			this.setItems(notes);
-			timeline.setSelection(noteToSelect);
-			loadDocument(noteToSelect);
 		}.bind(timeline), 100));
 
 	};
