@@ -75,10 +75,27 @@ define(["common/session", "common/searchParser", "text!clinicalHistoryViewer/vie
 					if(documentCache[documentId]){
 						renderDocument(documentCache[documentId]);
 					}else{
-						$.get("/rest/document/" + documentId,function(data, status, jqXHR){
-							renderDocument(data);
-							documentCache[documentId] = data;
-						}.bind(this));
+						$.ajax({
+							url: '/rest/document/' + documentId,
+							type: 'GET',
+							success: function(data, status, jqXHR){
+								renderDocument(data);
+								documentCache[documentId] = data;
+							}.bind(this),
+							error: function(jqXHR, status, error){
+								switch(jqXHR.status){
+								case 403:
+									alert('You have exceeded the number of notes you can view per second too many times. You must have an admin reset your account before you can view any more notes.');
+									break;
+								case 404:
+									alert('This note seems to be missing. Please contact an administrator.')
+									break;
+								default:
+									alert('An unknown error has occurred. Please contact an administrator.')
+									break;
+								}
+							}
+						});
 
 					}
 				}
