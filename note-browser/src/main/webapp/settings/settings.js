@@ -12,7 +12,7 @@ define(["text!settings/settings.hbs", "common/session", "jquery", "underscore", 
 		},
 		resetRateLimit: function(event){
 			$.ajax({
-				type:'post',
+				type:'PUT',
 				url: "/rest/rateLimitReset/" + event.target.dataset.user,
 				success: function(data){
 					alert("The user's rate limit has been reset successfully.");
@@ -30,7 +30,7 @@ define(["text!settings/settings.hbs", "common/session", "jquery", "underscore", 
 			$.ajax({
 				data: JSON.stringify(userModel),
 				url: "/rest/user",
-				type: 'post',
+				type: 'POST',
 				dataType: "json",
 				contentType: "application/json",
 				success: function(data){

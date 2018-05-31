@@ -8,6 +8,7 @@ import java.util.List;
 import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -47,7 +48,7 @@ public class ClinicalNoteService {
 
 	private HashMap<String, Integer> rateLimitExceededCounters = new HashMap<>();
 
-	@POST
+	@PUT
 	@Path("rateLimitReset")
 	@RolesAllowed("ROLE_ADMIN")
 	public Response resetRateLimit(@PathParam("user") String userName) {
