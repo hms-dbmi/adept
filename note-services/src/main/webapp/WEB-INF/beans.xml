@@ -74,6 +74,7 @@
 			<ref bean="patientHistoryService" />
 			<ref bean="validationService" />
 			<ref bean="userManagementService" />
+			<ref bean="userInteractionService" />
 		</jaxrs:serviceBeans>
 		<jaxrs:providers>
 			<bean class="com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider" />
