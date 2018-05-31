@@ -77,14 +77,14 @@ define(['jquery', 'handlebars', 'underscore', 'vis', 'common/synonymMapper'],
 				stack:false, 
 				zoomMax : (1000 * 60 * 60) * 24 /*hours*/ * 365 /*days*/ * 3 /*years*/
 			});	
-			timeline.on('select', function(properties){
+			timeline.on('select', _.debounce(function(properties){
 				selectedItem = properties.items[0];
 				if(selectedItem !== undefined){
 					currentDocument = properties.items[0];
 					loadDocument(currentDocument);						
 				}
 				
-			});
+			}, 100));
 		};
 
 		createTimeline(loadDocument);
