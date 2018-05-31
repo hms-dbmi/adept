@@ -1,5 +1,5 @@
-define(["common/session", "common/searchParser", "underscore", "jquery", "handlebars", "text!common/login.hbs"], 
-		function(session, parseQueryString, _, $, HBS, loginTemplate){
+define(["common/session", "common/searchParser", "jquery", "handlebars", "text!common/login.hbs"],
+		function(session, parseQueryString, $, HBS, loginTemplate){
 	var loginTemplate = HBS.compile(loginTemplate);
 
 	var loginCss = null

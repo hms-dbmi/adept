@@ -14,11 +14,11 @@ public class UserInteraction {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private BigInteger id;
 	
-	private int userId;
+	private String user;
 	
-	private long startTime;
-	
-	private long endTime;
+	private String description;
+
+	private long timestamp;
 
 	public BigInteger getId() {
 		return id;
@@ -29,30 +29,30 @@ public class UserInteraction {
 		return this;
 	}
 
-	public int getUserId() {
-		return userId;
+	public String getUser() {
+		return user;
 	}
 
-	public UserInteraction setUserId(int userId) {
-		this.userId = userId;
+	public UserInteraction setUser(String user) {
+		this.user = user;
 		return this;
 	}
-	
-	public long getEndTime() {
-		return endTime;
+
+	public long getTimestamp() {
+		return timestamp;
 	}
 
-	public UserInteraction setEndTime(long endTime) {
-		this.endTime = endTime;
+	public UserInteraction setTimestamp(long timestamp) {
+		this.timestamp = timestamp;
 		return this;
 	}
-	
-	public long getStartTime() {
-		return startTime;
+
+	public String getDescription() {
+		return description;
 	}
 
-	public UserInteraction setStartTime(long startTime) {
-		this.startTime = startTime;
+	public UserInteraction setDescription(String description) {
+		this.description = description;
 		return this;
 	}
 

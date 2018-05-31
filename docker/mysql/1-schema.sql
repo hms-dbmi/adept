@@ -12,9 +12,9 @@ CREATE TABLE User (
 DROP TABLE IF EXISTS UserInteraction;
 CREATE TABLE UserInteraction (
 	id BIGINT NOT NULL auto_increment,
-	userId INT NOT NULL, 
-	category VARCHAR(120) NOT NULL,
+	user VARCHAR(120) NOT NULL,
 	description VARCHAR(250) NOT NULL, 
+	timestamp BIGINT,
 	PRIMARY KEY(id));
 	
 DROP TABLE IF EXISTS Mapping;
