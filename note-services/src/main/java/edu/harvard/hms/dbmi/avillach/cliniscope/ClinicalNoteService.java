@@ -49,7 +49,7 @@ public class ClinicalNoteService {
 	private HashMap<String, Integer> rateLimitExceededCounters = new HashMap<>();
 
 	@PUT
-	@Path("rateLimitReset")
+	@Path("rateLimitReset/{user}")
 	@RolesAllowed("ROLE_ADMIN")
 	public Response resetRateLimit(@PathParam("user") String userName) {
 		rateLimitExceededCounters.put(userName, 0);
