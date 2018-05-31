@@ -121,7 +121,7 @@ public class ClinicalNoteService {
 				return true;
 			}
 
-			rateLimitExceededCount++;
+			rateLimitExceededCounters.put(username, rateLimitExceededCount + 1);
 			return false;
 		}
 	}
