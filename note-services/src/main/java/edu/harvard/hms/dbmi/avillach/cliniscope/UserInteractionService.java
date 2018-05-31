@@ -1,5 +1,6 @@
 package edu.harvard.hms.dbmi.avillach.cliniscope;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
@@ -20,6 +21,7 @@ public class UserInteractionService {
 	private UserInteractionRepo interactionRepo;
 	
 	@POST
+	@Consumes("application/json")
 	public Response recordInteraction(UserInteraction interaction) {
 		interaction.setTimestamp(System.currentTimeMillis());
 		interaction.setUser(JAXRSUtils.getCurrentMessage().get(
