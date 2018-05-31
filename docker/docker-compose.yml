@@ -28,6 +28,8 @@ services:
     build:
       context: ./httpd
       dockerfile: Dockerfile
+    environment:
+      - HTTPD_PREFIX=/usr/local/apache2
     expose:
       - 80
       - 443
