@@ -69,6 +69,8 @@ define(['jquery', 'handlebars', 'underscore', 'vis', 'common/synonymMapper'],
 		
 		var noteToSelect = _.findWhere(notes, {hasInterestingRelation: true}).id;
 
+		var selectedItem;
+
 		var createTimeline = function(loadDocument){
 			$(timelineElement).html("");
 			timeline = new vis.Timeline(timelineElement, notes, CUIs, {
@@ -76,7 +78,7 @@ define(['jquery', 'handlebars', 'underscore', 'vis', 'common/synonymMapper'],
 				zoomMax : (1000 * 60 * 60) * 24 /*hours*/ * 365 /*days*/ * 3 /*years*/
 			});	
 			timeline.on('select', function(properties){
-				var selectedItem = properties.items[0];
+				selectedItem = properties.items[0];
 				if(selectedItem !== undefined){
 					currentDocument = properties.items[0];
 					loadDocument(currentDocument);						
@@ -97,6 +99,7 @@ define(['jquery', 'handlebars', 'underscore', 'vis', 'common/synonymMapper'],
 			}) : notes;
 
 			this.setItems(notes);
+			this.setSelection(selectedItem);
 		}.bind(timeline), 100));
 
 	};

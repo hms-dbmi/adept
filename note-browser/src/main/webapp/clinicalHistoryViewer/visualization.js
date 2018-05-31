@@ -85,7 +85,7 @@ define(["common/session", "common/searchParser", "text!clinicalHistoryViewer/vie
 							error: function(jqXHR, status, error){
 								switch(jqXHR.status){
 								case 403:
-									alert('You have exceeded the number of notes you can view per second too many times. You must have an admin reset your account before you can view any more notes.');
+									alert('You have exceeded the number of notes you can view in a short period of time. If this happens too many times you will have to have an admin unlock your account before you can view any more notes.');
 									break;
 								case 404:
 									alert('This note seems to be missing. Please contact an administrator.')
