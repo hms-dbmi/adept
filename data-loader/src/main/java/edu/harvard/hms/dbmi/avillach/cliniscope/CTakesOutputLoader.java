@@ -106,10 +106,10 @@ public class CTakesOutputLoader {
 
 	@Autowired
 	private PatientMappingRepo patientMappingRepo;
-	
+
 	@Autowired
 	private ClinicalNoteMappingRepo noteMappingRepo;
-	
+
 	@Autowired
 	private PatientRepository patientRepo;
 
@@ -148,15 +148,18 @@ public class CTakesOutputLoader {
 					currentDocumentId = line[1];
 				}
 				String patientId = line[0];
-				String patientUUID = UUID.randomUUID().toString();
-				PatientMapping mapping = new PatientMapping().setSourceId(patientId).setUuid(patientUUID);
-				patientMappingRepo.ensureExists(ImmutableList.of(mapping));
-				currentPatient = 
-						new Patient()
+				String patientUUID;
+				String noteUUID;
+				synchronized(patientMappingRepo){
+					PatientMapping mapping = patientMappingRepo.getBySourceId(patientId);
+					patientUUID = mapping.getUuid();
+				}
+				currentPatient = new Patient()
 						.setPatientId(patientUUID);
-				String noteUUID = UUID.randomUUID().toString();
-				ClinicalNoteMapping noteMapping = new ClinicalNoteMapping().setSourceId(currentDocumentId).setUuid(noteUUID);
-				noteMappingRepo.ensureExists(ImmutableList.of(noteMapping));
+				synchronized(noteMappingRepo){
+					ClinicalNoteMapping noteMapping = noteMappingRepo.getBySourceId(currentDocumentId);
+					noteUUID = noteMapping.getUuid();
+				}
 				currentNote = 
 						new ClinicalNote()
 						.setClinicalNoteId(noteUUID)
@@ -225,14 +228,18 @@ public class CTakesOutputLoader {
 							currentDocumentId = line[1];
 						}
 						String patientId = line[0];
-						String patientUUID = UUID.randomUUID().toString();
-						PatientMapping patientMapping = new PatientMapping().setSourceId(patientId).setUuid(patientUUID);
-						patientMappingRepo.ensureExists(ImmutableList.of(patientMapping));
+						String patientUUID;
+						String noteUUID;
+						synchronized(patientMappingRepo){
+							PatientMapping mapping = patientMappingRepo.getBySourceId(patientId);
+							patientUUID = mapping.getUuid();
+						}
 						currentPatient = new Patient()
 								.setPatientId(patientUUID);
-						String noteUUID = UUID.randomUUID().toString();
-						ClinicalNoteMapping noteMapping = new ClinicalNoteMapping().setSourceId(currentDocumentId).setUuid(noteUUID);
-						noteMappingRepo.ensureExists(ImmutableList.of(noteMapping));
+						synchronized(noteMappingRepo){
+							ClinicalNoteMapping noteMapping = noteMappingRepo.getBySourceId(currentDocumentId);
+							noteUUID = noteMapping.getUuid();
+						}
 						currentNote = 
 								new ClinicalNote()
 								.setClinicalNoteId(noteUUID)

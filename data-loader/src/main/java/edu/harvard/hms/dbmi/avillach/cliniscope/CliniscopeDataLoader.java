@@ -97,12 +97,36 @@ public class CliniscopeDataLoader {
 	 * the note is overwritten to be blank at this time. This should be fixed to be smarter.
 	 */
 	public void loadAllClinicalNotes(){
+		long startTime = System.currentTimeMillis();
+		ExecutorService ex = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()*8);
 		for(ClinicalNote note : clinicalNoterepo.listNotes()){
-			String noteText = loadNote(note);
-			String encryptedNoteText = encryptNoteText(noteText);
-			note.setNoteText(encryptedNoteText);
-			clinicalNoterepo.ensureExists(ImmutableList.of(note));
-			System.out.println("loaded " + note.getClinicalNoteId());
+			ex.execute(new Runnable(){
+				@Override
+				public void run() {
+					try{
+						String noteText = loadNote(note);
+						String encryptedNoteText = encryptNoteText(noteText);
+						note.setNoteText(encryptedNoteText);
+						clinicalNoterepo.ensureExists(ImmutableList.of(note));
+						System.out.println("loaded " + note.getClinicalNoteId());					
+					}catch(Exception e){
+						System.out.println(note.getClinicalNoteId());
+						e.printStackTrace();
+					}finally{
+						
+					}
+				}
+
+			});
+		}
+		try {
+			ex.shutdown();
+			while(!ex.awaitTermination(5, TimeUnit.SECONDS)){
+				System.out.println("Waiting for load to complete : " + ((System.currentTimeMillis() - startTime)/1000) + " seconds so far.");
+			}
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
 		}
 	}
 
@@ -126,7 +150,7 @@ public class CliniscopeDataLoader {
 
 	public void loadData() {
 		long startTime = System.currentTimeMillis();
-		ExecutorService ex = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()*4);
+		ExecutorService ex = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()*8);
 		for(File file : new File(inputPath + "/Summary_relations").listFiles()){
 			ex.execute(new Runnable(){
 				final File files = file;
