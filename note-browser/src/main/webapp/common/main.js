@@ -1,5 +1,6 @@
 require.config({
 	baseUrl: "/",
+	urlArgs: "no_cache=" + (new Date()).getTime(),
 	paths: {
 		jquery: 'webjars/jquery/3.2.1/jquery.min',
 		underscore: 'webjars/underscorejs/1.8.3/underscore-min',
