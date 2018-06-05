@@ -45,34 +45,31 @@ define(["text!patientList/patientListContainer.hbs", "common/session", "text!pat
 							drugEnabledPatients.push($('#patientList .patient-info-block').has('.btn-candidate.drug-'+drugCui));
 						});
 					}
+					// Hide all patients if any filters are applied, otherwise show all patients
 					if(drugEnabledPatients.length > 0 || candidateEnabledPatients.length > 0 || eventEnabledPatients.length > 0){
 						$('.patient-info-block').hide();
+						$('.btn-candidate').hide();
+						$('.candidate-validation-indicator').hide();
 					}else{
 						$('.patient-info-block').show();
+						$('.btn-candidate').show();
+						$('.candidate-validation-indicator').show();
 					}
+					// If we have any selected candidates, we show patients based off of the candidate
 					if(selectedCandidates.length > 0){
 						_.each(candidateEnabledPatients, function(patient){
 							patient.show();
-						});						
+						});
+						_.each(selectedCandidates, function(candidateId){
+							var cuis = candidateId.split('-');
+							$('.btn-candidate.drug-'+cuis[0]+'.event-'+cuis[1]).show();
+						});
+
+					// If we have no selected candidates we show patients based on drug
 					}else{
 						_.each(drugEnabledPatients, function(patient){
 							patient.show();
 						});						
-					}
-					if(drugEnabledPatients.length > 0 || candidateEnabledPatients.length > 0 || eventEnabledPatients.length > 0){
-						$('.btn-candidate').hide();
-						$('.candidate-validation-indicator').hide();
-					}else{
-						$('.btn-candidate').show();
-						$('.candidate-validation-indicator').show();
-					}
-					if(selectedCandidates.length > 0){
-						_.each(selectedCandidates, function(candidateId){
-							var cuis = candidateId.split('-');
-							$('.btn-candidate.drug-'+cuis[0]+'.event-'+cuis[1]).show();
-							$('.btn-candidate.drug-'+cuis[0]+'.event-'+cuis[1]).show();
-						});
-					}else{
 						_.each(selectedDrugCuis, function(drugCui){
 							$('.btn-candidate.drug-'+drugCui).show();
 							$('.candidate-validation-indicator.drug-'+drugCui).show();
