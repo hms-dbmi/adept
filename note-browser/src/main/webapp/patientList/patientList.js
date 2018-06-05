@@ -90,7 +90,7 @@ define(["text!patientList/patientListContainer.hbs", "common/session", "text!pat
 						$('.candidate-relation-block').hide();
 						selectedDrugCuis.forEach(function(drugCui){
 							$('.candidate-relation-block')
-							.has('.candidate-selection-checkbox.drug-'+cuis[0])
+							.has('.candidate-selection-checkbox.drug-'+drugCui)
 							.show();
 						});			
 					}else{
