@@ -44,6 +44,12 @@ public class AuthCodeService {
 	@Value("${applicationBaseUri}")
 	private String applicationBaseUri;
 	
+	@Value("${auth0.client_secret}")
+	private String clientSecret;
+	
+	@Value("${auth0.client_id}")
+	private String clientId;
+	
 	@POST
 	@Path("auth")
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -85,8 +91,8 @@ public class AuthCodeService {
 		Map<String, String> tokenResponse = client.post(
 				new ImmutableMap.Builder<String, String>()
 					.put("grant_type", "authorization_code")
-					.put("client_id", "MUPJoktRm8irc1yOqCfbP5IvAONQtK4W")
-					.put("client_secret", "BTjvwFbIucipB5DF1zarLA7P7_nnd0LEEEMhW8QAdxMFTeiR26RVQidS7-6jr6kD")
+					.put("client_id", clientId)
+					.put("client_secret", clientSecret)
 					.put("code", authCode)
 					.put("scope", "admin")
 					.put("redirect_uri", getRedirectUri())
@@ -106,9 +112,9 @@ public class AuthCodeService {
 		Map<String, String> tokenResponse = client.post(
 				new ImmutableMap.Builder<String, String>()
 					.put("grant_type", "client_credentials")
-					.put("client_id", "MUPJoktRm8irc1yOqCfbP5IvAONQtK4W")
+					.put("client_id", clientId)
 					.put("scopes", "offline-access")
-					.put("client_secret", "BTjvwFbIucipB5DF1zarLA7P7_nnd0LEEEMhW8QAdxMFTeiR26RVQidS7-6jr6kD")
+					.put("client_secret", clientSecret)
 					.put("audience", "https://cliniscope-dev.hms.harvard.edu")
 							.build() , Map.class);
 		return tokenResponse;
