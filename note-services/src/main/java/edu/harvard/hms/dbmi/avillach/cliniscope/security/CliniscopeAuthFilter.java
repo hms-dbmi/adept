@@ -16,6 +16,7 @@ import org.apache.cxf.jaxrs.utils.JAXRSUtils;
 import org.apache.cxf.security.SecurityContext;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -35,6 +36,9 @@ import io.jsonwebtoken.Jwts;
 @Provider
 public class CliniscopeAuthFilter implements ContainerRequestFilter {
 	
+	@Value("${auth0.client_secret}")
+	private String clientSecret;
+	
 	@Autowired
 	UserRepository userRepo;
 	
@@ -52,7 +56,7 @@ public class CliniscopeAuthFilter implements ContainerRequestFilter {
 	            return;
 	        }
 	        Jwt<JwsHeader, Claims> claims = Jwts.parser()
-	        		.setSigningKey("BTjvwFbIucipB5DF1zarLA7P7_nnd0LEEEMhW8QAdxMFTeiR26RVQidS7-6jr6kD".getBytes())
+	        		.setSigningKey(clientSecret.getBytes())
 	        		.parseClaimsJws(parts[1]);
 	        
 	        String sub = (String) claims.getBody().get("sub");
