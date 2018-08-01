@@ -64,6 +64,8 @@ public class CliniscopeAuthFilter implements ContainerRequestFilter {
 	        User user = retrieveUser(sub);
 			
 	        attachSecurityContext(user);
+
+			System.out.println("User : " + user.getAuthenticationName() + " " + requestContext.getMethod() + " " + requestContext.getUriInfo().getPath());
 		}
 	}
 
