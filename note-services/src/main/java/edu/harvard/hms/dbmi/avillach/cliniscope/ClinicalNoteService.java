@@ -63,7 +63,7 @@ public class ClinicalNoteService {
 	public Response getNote(@PathParam("documentId") String documentId){
 		if(userHasNotExceededRateLimit()) {
 			ClinicalNote clinicalNote = clinicalNoterepo.getById(documentId);
-			System.out.println("documentId : " + documentId + " : " + clinicalNote);
+			System.out.println("User : " + username() + " retrieved note " + documentId + " for patient " + clinicalNote.getPatientId());
 			if(clinicalNote==null){
 				return Response.status(404).build();
 			}
@@ -103,8 +103,7 @@ public class ClinicalNoteService {
 	}
 
 	private boolean userHasNotExceededRateLimit() {
-		String username = JAXRSUtils.getCurrentMessage().get(
-				SecurityContext.class).getUserPrincipal().getName();
+		String username = username();
 		Integer rateLimitExceededCount = rateLimitExceededCounters.get(username);
 		if(rateLimitExceededCount == null) {
 			rateLimitExceededCount = 0;
@@ -125,6 +124,11 @@ public class ClinicalNoteService {
 			rateLimitExceededCounters.put(username, rateLimitExceededCount + 1);
 			return false;
 		}
+	}
+
+	private String username() {
+		return JAXRSUtils.getCurrentMessage().get(
+				SecurityContext.class).getUserPrincipal().getName();
 	}
 
 	static char[] alpha = "abcdefghijklmnopqrstuvwxyz".toCharArray();

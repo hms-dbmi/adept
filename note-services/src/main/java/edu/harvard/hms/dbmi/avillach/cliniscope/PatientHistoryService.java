@@ -10,6 +10,8 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
+import org.apache.cxf.jaxrs.utils.JAXRSUtils;
+import org.apache.cxf.security.SecurityContext;
 import org.bouncycastle.crypto.tls.HashAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,7 +51,10 @@ public class PatientHistoryService {
 	@Path("{patientId}")
 	@Produces("application/json")
 	@RolesAllowed("ROLE_ADMIN ROLE_ADJUDICATE ROLE_VALIDATE")
-	public Response getPatientHistory(@PathParam("patientId") String patientId){
+	public Response getPatientHistory(@PathParam("patientId") String patientId){		
+		
+		System.out.println("User : " + username() + " retrieved history for patient " + patientId);
+
 		PatientHistoryDTO history = new PatientHistoryDTO()
 				.setPatientId(patientId)
 				.setRelations(
@@ -67,6 +72,7 @@ public class PatientHistoryService {
 	@Produces("application/json")
 	@RolesAllowed("ROLE_ADMIN ROLE_ADJUDICATE ROLE_VALIDATE")
 	public Response listPatients(){
+		System.out.println("User : " + username() + " listed patients ");
 		return Response.ok(
 				candidateRepo.list().stream().collect(
 						groupingBy(Candidate::getPatientId, toList())).
@@ -76,5 +82,10 @@ public class PatientHistoryService {
 						setCandidateRelations(entry.getValue())).
 				sorted(comparing(PatientValidationDTO::getPatientId)).
 				collect(toList())).build();
+	}
+
+	private String username() {
+		return JAXRSUtils.getCurrentMessage().get(
+				SecurityContext.class).getUserPrincipal().getName();
 	}
 }
