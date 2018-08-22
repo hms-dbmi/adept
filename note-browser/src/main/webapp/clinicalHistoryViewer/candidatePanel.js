@@ -54,7 +54,7 @@ define(["clinicalHistoryViewer/usermodeFilters", "common/session", "common/searc
 			var patientId = this.patientId;
 			_.each(parseQueryString().candidate.split(","), function(candidate){
 				var checkboxId = candidate;
-				if($('#' + checkboxId)[0]){
+				if(checkboxId !== "" && $('#' + checkboxId)[0]){
 					$('#' + checkboxId)[0].checked = true;					
 				}
 			});
