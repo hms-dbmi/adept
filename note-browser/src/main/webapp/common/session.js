@@ -49,7 +49,7 @@ define(["jquery", "underscore"], function($, _){
 			return JSON.parse(sessionStorage.session).currentUserMode;
 		},
 		activity : _.throttle(function(activity){
-			if(activity === undefined){
+			if(typeof activity !== "string"){
 				activity = window.location.href;
 			}
 			$.ajax({
