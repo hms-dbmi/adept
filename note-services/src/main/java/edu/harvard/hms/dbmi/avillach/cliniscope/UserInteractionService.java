@@ -32,7 +32,7 @@ public class UserInteractionService {
 			// The user transitioned to a new activity
 			if(currentActivity.expirationTime > System.currentTimeMillis()) {
 				// The last activity was less than expiration time
-				System.out.println("User : " + username + " spent " + (System.currentTimeMillis() - currentActivity.startTime) + " " + currentActivity);
+				System.out.println("User : " + username + " spent " + (System.currentTimeMillis() - currentActivity.startTime) + " " + currentActivity.description);
 				currentActivity.description = interaction.getDescription();
 				currentActivity.startTime = System.currentTimeMillis();
 			} else {
@@ -55,6 +55,6 @@ public class UserInteractionService {
 	}
 
 	private String expirationMessage(UserInteraction interaction, String username, Activity currentActivity) {
-		return "User : " + username + " spent " + (currentActivity.expirationTime - currentActivity.startTime) + " " + interaction.getDescription() + " (timeout)";
+		return "User : " + username + " spent " + (currentActivity.expirationTime - currentActivity.startTime) + " " + currentActivity.description + " (timeout)";
 	}
 }

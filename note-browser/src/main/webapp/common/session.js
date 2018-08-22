@@ -48,8 +48,10 @@ define(["jquery", "underscore"], function($, _){
 		userMode : function(){
 			return JSON.parse(sessionStorage.session).currentUserMode;
 		},
-		activity : _.throttle(function(){
-			activity = window.location.href;
+		activity : _.throttle(function(activity){
+			if(activity === undefined){
+				activity = window.location.href;
+			}
 			$.ajax({
 				data: JSON.stringify({
 					description : activity

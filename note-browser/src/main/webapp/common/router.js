@@ -23,6 +23,7 @@ define(["settings/settings","common/searchParser", "nav/topNav", "backbone", "co
             		}else{
             			this.router.navigate(path, {trigger: true});
             		}
+                session.activity(path);
                 return pushState.apply(history, arguments);
             }.bind({router:this});
         },
