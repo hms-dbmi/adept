@@ -187,7 +187,7 @@ define(["text!patientList/patientListContainer.hbs", "common/session", "text!pat
 					});
 					var content = HBS.compile(cuiTemplate)({
 						termClassName : "Event",
-						terms : eventTerms
+						terms : _.sortBy(eventTerms, "term")
 					});
 
 					$("#event-filter").html(content);
