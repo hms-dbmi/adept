@@ -99,8 +99,8 @@ define(['jquery', 'handlebars', 'underscore', 'vis', 'common/synonymMapper'],
 			}) : notes;
 
 			this.setItems(notes);
-			this.setSelection(selectedItem);
-		}.bind(timeline), 100));
+			this.setSelection(this.selectedItem);
+		}.bind(_.extend({selectedItem:noteToSelect}, timeline)), 100));
 
 	};
 
