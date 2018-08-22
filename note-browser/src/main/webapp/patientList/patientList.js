@@ -140,6 +140,7 @@ define(["text!patientList/patientListContainer.hbs", "common/session", "text!pat
 					var content = HBS.compile(patientTemplate)(patientsWithCandidateRelations.map(function(patient){
 						return {
 							patientId : patient.patientId.substring(0,7),
+							fullPatientId : patient.patientId,
 							candidateRelations: patient.candidateRelations
 						};
 					}));
