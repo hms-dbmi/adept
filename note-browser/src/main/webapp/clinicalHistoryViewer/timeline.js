@@ -100,6 +100,7 @@ define(['jquery', 'handlebars', 'underscore', 'vis', 'common/synonymMapper'],
 
 			this.setItems(notes);
 			this.setSelection(this.selectedItem);
+			this.focus(this.selectedItem);
 		}.bind(_.extend({selectedItem:noteToSelect}, timeline)), 100));
 
 	};
