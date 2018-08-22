@@ -30,11 +30,11 @@ public class UserInteractionService {
 			userActivityMap.put(username, new Activity(interaction.getDescription()));
 		} else if( ! currentActivity.description.equals(interaction.getDescription())) {
 			// The user transitioned to a new activity
-			if(currentActivity.expirationTime < System.currentTimeMillis()) {
+			if(currentActivity.expirationTime > System.currentTimeMillis()) {
 				// The last activity was less than expiration time
 				System.out.println("User : " + username + " spent " + (System.currentTimeMillis() - currentActivity.startTime) + " " + interaction.getDescription());
 				currentActivity.description = interaction.getDescription();
-				currentActivity.startTime = System.currentTimeMillis();				
+				currentActivity.startTime = System.currentTimeMillis();
 			} else {
 				// The last activity had expired
 				System.out.println(expirationMessage(interaction, username, currentActivity));
@@ -42,7 +42,7 @@ public class UserInteractionService {
 			}
 		} else {
 			// The user is still in the same activity
-			if(currentActivity.expirationTime < System.currentTimeMillis()) {
+			if(currentActivity.expirationTime > System.currentTimeMillis()) {
 				// The last activity was less than expiration time
 				currentActivity.updateExpirationTime();				
 			} else {
