@@ -179,11 +179,11 @@ define(["text!patientList/patientListContainer.hbs", "common/session", "text!pat
 
 					$("#drug-filter").html(content);
 
-					var eventTerms = _.uniq(_.map(_.where(data, {"term_class": 2}), function(drug){
-						drug.term = synMapper.nameForDrugCui(drug.cui, drug.term);
-						return drug;
-					}), function(drug){
-						return drug.cui;
+					var eventTerms = _.uniq(_.map(_.where(data, {"term_class": 2}), function(event){
+						event.term = synMapper.nameForDrugCui(event.cui, event.term) + " ("+event.cui+")";
+						return event;
+					}), function(event){
+						return event.cui;
 					});
 					var content = HBS.compile(cuiTemplate)({
 						termClassName : "Event",
