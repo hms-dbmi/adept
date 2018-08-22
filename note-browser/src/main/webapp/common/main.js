@@ -24,6 +24,6 @@ require.config({
 require(["backbone", "common/session", "common/router", "underscore", "jquery", "bootstrap"],
 		function(Backbone, session, router){
 	Backbone.history.start({pushState:true});
-	document.onmousemove = session.activity();
-	document.onkeyup = session.activity();
+	document.onmousemove = session.activity;
+	document.onkeyup = session.activity;
 });
