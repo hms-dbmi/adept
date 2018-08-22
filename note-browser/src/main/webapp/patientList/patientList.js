@@ -174,8 +174,8 @@ define(["text!patientList/patientListContainer.hbs", "common/session", "text!pat
 					});
 					var content = HBS.compile(cuiTemplate)({
 						termClassName : "Drug",
-						terms : drugTerms
-					}).sort();
+						terms : _.sortBy(drugTerms, "term")
+					})
 
 					$("#drug-filter").html(content);
 
@@ -184,7 +184,7 @@ define(["text!patientList/patientListContainer.hbs", "common/session", "text!pat
 						return drug;
 					}), function(drug){
 						return drug.cui;
-					}).sort();
+					});
 					var content = HBS.compile(cuiTemplate)({
 						termClassName : "Event",
 						terms : eventTerms
