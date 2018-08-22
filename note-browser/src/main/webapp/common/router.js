@@ -33,7 +33,7 @@ define(["settings/settings","common/searchParser", "nav/topNav", "backbone", "co
                 return false;
             }
             if (callback) {
-                    callback.apply(this, args);
+                callback.apply(this, args);
             }
         },
        

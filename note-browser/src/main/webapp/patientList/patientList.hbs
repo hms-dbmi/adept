@@ -3,7 +3,7 @@
 <div class='row'>
 	<div class='container well patient-info-block' id='patientInfo-{{patientId}}'>
 		<div class='patient-info row'>
-			<span>Patient: {{patientId}}<span>
+			<a href='/patientHistory/{{patientId}}?candidate={{#each candidateRelations}}{{id}},{{/each}}'><span>Patient: {{patientId}}<span></a>
 		</div>
 		<div class='patient-term-validations container'>
 			{{#each candidateRelations}}

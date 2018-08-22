@@ -1,4 +1,4 @@
-define(["jquery"], function($){
+define(["jquery", "underscore"], function($, _){
 	var storedSession = JSON.parse(
 			sessionStorage.getItem("session"));
 	
@@ -47,6 +47,18 @@ define(["jquery"], function($){
 		},
 		userMode : function(){
 			return JSON.parse(sessionStorage.session).currentUserMode;
-		}
+		},
+		activity : _.throttle(function(){
+			activity = window.location.href;
+			$.ajax({
+				data: JSON.stringify({
+					description : activity
+				}),
+				url: "/rest/interaction",
+				type: 'POST',
+				dataType: "json",
+				contentType: "application/json"
+			});
+		}, 10000)
 	}
 });

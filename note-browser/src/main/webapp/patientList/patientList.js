@@ -154,6 +154,11 @@ define(["text!patientList/patientListContainer.hbs", "common/session", "text!pat
 						var target = event.target.dataset.targetUrl;
 						router.navigate(target, {trigger: true});
 					});
+					
+					$(".link-patient-id").click(function(event){
+						var target = event.target.dataset.targetUrl;
+						router.navigate(target, {trigger: true});
+					});
 
 					filterPatients();
 					filterCandidates();
@@ -170,7 +175,7 @@ define(["text!patientList/patientListContainer.hbs", "common/session", "text!pat
 					var content = HBS.compile(cuiTemplate)({
 						termClassName : "Drug",
 						terms : drugTerms
-					});
+					}).sort();
 
 					$("#drug-filter").html(content);
 
@@ -179,7 +184,7 @@ define(["text!patientList/patientListContainer.hbs", "common/session", "text!pat
 						return drug;
 					}), function(drug){
 						return drug.cui;
-					});
+					}).sort();
 					var content = HBS.compile(cuiTemplate)({
 						termClassName : "Event",
 						terms : eventTerms
